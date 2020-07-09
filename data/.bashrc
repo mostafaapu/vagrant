@@ -113,8 +113,12 @@ if ! shopt -oq posix; then
 fi
 
 # my own stuff
-alias mk='sudo minikube'
-alias mkstart='sudo minikube start --driver=none'
-alias doc='sudo docker'
-alias minikube='sudo minikube'
 alias docker='sudo docker'
+alias doc='sudo docker'
+alias mkstart='sudo minikube start --driver=none'
+alias mk='sudo minikube'
+alias minikube='sudo minikube'
+alias apt-rm='sudo apt-get remove --purge'
+alias untar='tar xvf'
+alias x='exit'
+alias python='python3.8'
