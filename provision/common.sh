@@ -9,7 +9,7 @@ sudo apt autoremove
 sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
-    curl \
+	curl \
 	git \
 	wget \
     gnupg-agent \
