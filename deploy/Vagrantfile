@@ -1,23 +1,20 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
 Vagrant.configure("2") do |config|
   config.vm.box = "hashicorp/bionic64"
+
   config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+
   config.vm.synced_folder "../data", "/home/vagrant/vagrant_data"
-  config.vm.provision "shell", path: "/../provision/common.sh"
-  config.vm.provision "shell", path: "/../provision/docker.sh"
-  config.vm.provision "shell", path: "/../provision/kubectl.sh"
-  
-  # config.vm.network "private_network", ip: "192.168.33.10"
-  # config.vm.network "public_network"
-  
+
+  config.vm.provision "shell", path: "./../data/provision/common.sh"
+  config.vm.provision "shell", path: "./../data/provision/docker.sh"
+  config.vm.provision "shell", path: "./../data/provision/kubectl.sh"
+  config.vm.provision "shell", path: "./../data/provision/run_last.sh"
+
   config.vm.provider "virtualbox" do |vb|
-	vb.name = "dev"
-	vb.cpus = 2
-	vb.memory = "4096"
-	#vb.gui = true
+    vb.name = "dev"
+    vb.cpus = 2
+    vb.memory = "4096"
   end
-  
+
 end

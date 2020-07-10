@@ -1,11 +1,11 @@
-# copy over bashrc
-cp vagrant_data/.bashrc .
+# add my shortcuts
+cp vagrant_data/.bash_aliases .
 
 # update
 sudo apt-get update
 sudo apt autoremove
 
-# install basics	
+# install basics
 sudo apt-get install -y \
 	apt-transport-https \
 	ca-certificates \
