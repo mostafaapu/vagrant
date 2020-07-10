@@ -1,5 +1,6 @@
 # add my shortcuts
-cp vagrant_data/.bash_aliases .
+cp /vagrant_data/.bash_aliases .
+mkdir cwd
 
 # update
 sudo apt-get update
