@@ -1,19 +1,25 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "devbox"
 
-  config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
-  config.vm.network :forwarded_port, guest: 22, host: 2222, host_ip: "0.0.0.0", id: "ssh", auto_correct: true
-
-  config.vm.synced_folder "../data", "/home/vagrant/vagrant_data"
-
-  config.vm.provision "shell", path: "./../data/provision/common.sh"
-  config.vm.provision "shell", path: "./../data/provision/upgrade.sh"
+  config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 443, host: 443
+  config.vm.network "forwarded_port", guest: 4200, host: 4200
+  config.vm.network "forwarded_port", guest: 6379, host: 6379
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network "forwarded_port", guest: 5432, host: 5432
+  config.vm.network "forwarded_port", guest: 61613, host: 61613
+  config.vm.network "forwarded_port", guest: 61616, host: 61616
+  config.vm.network "forwarded_port", guest: 8161, host: 8161
 
   config.vm.provider "virtualbox" do |vb|
-    vb.name = "dev-with-docker"
+    vb.name = "dev"
     vb.cpus = 2
     vb.memory = "8192"
   end
 
+  config.vm.provision "shell", path: "./../data/provision/common.sh"
+  config.vm.provision "shell", path: "./../data/provision/upgrade.sh"
+
+  config.vm.synced_folder "../data", "/opt/workspace"
 end

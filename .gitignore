@@ -1,2 +1,4 @@
 box
-.vagrant
+.vagrant/
+*.log
+dump.rdb

@@ -1,6 +1,5 @@
 # add my shortcuts
-cp /vagrant_data/.bash_aliases .
-mkdir cwd
+cp /opt/workspace/.bash_aliases .
 
 # update
 sudo apt-get update

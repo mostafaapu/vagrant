@@ -6,10 +6,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder "../data", "/home/vagrant/vagrant_data"
 
-  config.vm.provision "shell", path: "./../data/provision/common.sh"
-  config.vm.provision "shell", path: "./../data/provision/docker.sh"
-  config.vm.provision "shell", path: "./../data/provision/kubectl.sh"
-  config.vm.provision "shell", path: "./../data/provision/upgrade.sh"
+  config.vm.provision "shell", path: "./../data/provision/setup-dev.sh
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "dev"
