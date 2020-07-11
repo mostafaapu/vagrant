@@ -269,6 +269,22 @@ set_prompt() {
 trap 't_start' DEBUG
 PROMPT_COMMAND='set_prompt'
 
+track_git() {
+    if [ -d .git ]; then
+
+        modified_count=$(git status | grep "modified|new file" -c)
+        if [[ ${modified_count} -gt 0 ]]; then
+            printf " ${BRed}[${modified_count}+]${Color_Off}"
+        fi
+
+        deleted_count=$(git status | grep "deleted" -c)
+        if [[ ${deleted_count} -gt 0 ]]; then
+            printf " ${BRed}[${deleted_count}-]${Color_Off}"
+        fi
+
+    fi
+}
+
 export PS1='\
 \[\]\n\n\[\]
 \['""${BWhite}'\]---\['"${Color_Off}"'\]\
