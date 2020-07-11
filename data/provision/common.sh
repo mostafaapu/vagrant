@@ -3,7 +3,6 @@ cp /opt/workspace/.bash_aliases .
 
 # update
 sudo apt-get update
-sudo apt autoremove
 
 # install basics
 sudo apt-get install -y \

@@ -2,3 +2,4 @@ box
 .vagrant/
 *.log
 dump.rdb
+.vscode
