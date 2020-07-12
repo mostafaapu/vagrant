@@ -32,6 +32,7 @@ alias rmdir='rm -rf'
 alias untar='tar -zxvf '
 alias apt-get='sudo apt-get'
 alias k='sudo pkill'
+alias kf='sudo kill -9'
 alias amq='sudo /opt/activemq/bin/activemq start'
 alias amq_stop='sudo /opt/activemq/bin/activemq stop'
 alias ps='ps -la'
@@ -286,7 +287,7 @@ track_git() {
 }
 
 export PS1='\
-\[\]\n\n\[\]
+\[\]\n\n\
 \['""${BWhite}'\]---\['"${Color_Off}"'\]\
 \['"${BCyan}"'\] \T \['"${Color_Off}"'\]\
 \['"${BBlue}"'\]($t_show) \['"${Color_Off}"'\]\
@@ -295,6 +296,6 @@ export PS1='\
 \['"${BGreen}"'\]`__git_ps1`\['"${Color_Off}"'\]\
 \[`track_git`\]\
 \['""${BWhite}'\] --- \['"${Color_Off}"'\]\
-\[\]\n\[\]\
+\[\]\n\
 \['"${BWhite}"'\]➤➤➤ \['"${Color_Off}"'\]\
 \[\]'
