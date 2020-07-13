@@ -13,3 +13,6 @@ sudo apt-get install -y \
 	wget \
 	gnupg-agent \
 	software-properties-common
+
+sudo apt-get -y upgrade
+sudo apt -y autoremove
