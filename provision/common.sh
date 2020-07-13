@@ -1,5 +1,5 @@
 # add my shortcuts
-cp /opt/workspace/.bash_aliases .
+cp /home/vagrant/synced_folder/.bash_aliases .
 
 # update
 sudo apt-get update

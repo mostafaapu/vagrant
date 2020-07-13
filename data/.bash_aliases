@@ -43,6 +43,7 @@ alias update='sudo apt-get update'
 alias pg='sudo /etc/init.d/postgresql restart'
 alias install='sudo apt-get install'
 alias yarn='sudo yarn'
+alias apt-search='sudo apt-cache search'
 
 # ------ CSharp ------
 alias .run='dotnet run'
