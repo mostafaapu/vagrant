@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "__savage/ubuntu-20.04"
+  config.vm.box = "Windows-10"
 
   # ports
   config.vm.network "forwarded_port", guest: 80, host: 80
@@ -17,18 +17,18 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.name = "dev"
     vb.gui = true
-    vb.cpus = 2
-    vb.memory = 1024 * 4
-    # vb.customize ["modifyvm", :id, "--vram", "96"]
+    vb.cpus = 3
+    vb.memory = 1024 * 8
+    vb.customize ["modifyvm", :id, "--vram", "224"]
     # vb.customize ["modifyvm", :id, "--monitorcount", "2"]
   end
 
   # requires `vagrant-disksize` plugin
-  # config.disksize.size = "30GB"
+  # config.disksize.size = "40GB"
 
   # provision
-  config.vm.provision "shell", path: "./../provision/common.sh"
+  # config.vm.provision "shell", path: "./../provision/common.sh"
 
   # synced_folder
-  config.vm.synced_folder "../data", "/home/vagrant/synced_folder"
+  # config.vm.synced_folder "../data", "/home/vagrant/synced_folder"
 end

@@ -1,0 +1,18 @@
+* make full screen with CD guest additions 
+	OR turn of the vm and go to C:\Program Files\Oracle\VirtualBox
+	AND vBoxManage.exe setextradata "Windows 10" CustomVideoMode1 1920x1080x32
+
+# IN CMD ADMIN  	
+* reg add HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /d 0 /t REG_DWORD /f /reg:64
+
+# IN POWERSHEEL ADMIN
+* Get-AppXPackage -AllUsers | Remove-AppXPackage
+* Get-Childitem "C:\Windows\Logs\dosvc" | Remove-Item -Verbose
+* Disable-ComputerRestore c:
+* powercfg -h off
+* Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+
+* use disk cleanup to delete everything
+
+* vagrant package --base "Windows 10" --output Windows-10.box
+* vagrant box add Windows-10 Windows-10.box
